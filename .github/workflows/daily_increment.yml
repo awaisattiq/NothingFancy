@@ -33,7 +33,7 @@ jobs:
       - name: Randomize number of commits
         run: |
           # Generate a random number between 1 and 50 for the number of commits
-          RANDOM_COMMITS=$((RANDOM % 50 + 1))
+          RANDOM_COMMITS=$((RANDOM % 25 + 1))
           echo "Number of commits to make: $RANDOM_COMMITS"
 
           # Loop to make random number of commits
