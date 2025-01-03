@@ -3,6 +3,7 @@ name: Daily Increment
 on:
   schedule:
     - cron: '0 6 * * *' # Runs daily at 6:00 AM UTC
+  workflow_dispatch: # Enables manual triggering of the workflow
 
 jobs:
   increment_number:
@@ -29,5 +30,3 @@ jobs:
           git add number.txt
           git commit -m "Daily increment update"
           git push
-
-
