@@ -25,6 +25,11 @@ jobs:
           echo "Running increment script"
           python update_number.py
 
+      - name: Fetch latest changes from remote
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
       - name: Randomize number of commits
         run: |
           # Generate a random number between 1 and 50 for the number of commits
