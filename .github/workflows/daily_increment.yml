@@ -32,4 +32,4 @@ jobs:
           git config --global user.email "youremail@example.com"
           git add number.txt
           git commit -m "Daily increment update"
-          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/awaisattiq/NothingFancy.git
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/awaisattiq/NothingFancy.git
