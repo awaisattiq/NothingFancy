@@ -37,7 +37,7 @@ jobs:
           for i in $(seq 1 $RANDOM_COMMITS)
           do
             # Update the number in the text file
-            echo "Making commit #$i" >> number.txt
+            
             # Commit and push the change
             git config --global user.name "awaisattiq"
             git config --global user.email "youremail@example.com"
