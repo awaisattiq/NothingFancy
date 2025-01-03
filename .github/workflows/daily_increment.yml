@@ -1,6 +1,9 @@
 name: Daily Increment
 
 on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
   schedule:
     - cron: '0 6 * * *' # Runs daily at 6:00 AM UTC
   workflow_dispatch: # Enables manual triggering of the workflow
@@ -29,4 +32,4 @@ jobs:
           git config --global user.email "youremail@example.com"
           git add number.txt
           git commit -m "Daily increment update"
-          git push
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/YourUsername/YourRepository.git
