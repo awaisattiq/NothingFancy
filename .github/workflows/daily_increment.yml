@@ -1,0 +1,33 @@
+name: Daily Increment
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # Runs daily at 6:00 AM UTC
+
+jobs:
+  increment_number:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Run Increment Script
+        run: |
+          echo "Running increment script"
+          python update_number.py
+
+      - name: Commit Changes
+        run: |
+          git config --global user.name "YourGitHubUsername"
+          git config --global user.email "youremail@example.com"
+          git add number.txt
+          git commit -m "Daily increment update"
+          git push
+
+
