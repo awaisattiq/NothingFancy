@@ -28,8 +28,8 @@ jobs:
 
       - name: Commit Changes
         run: |
-          git config --global user.name "YourGitHubUsername"
+          git config --global user.name "awaisattiq"
           git config --global user.email "youremail@example.com"
           git add number.txt
           git commit -m "Daily increment update"
-          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/YourUsername/YourRepository.git
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/awaisattiq/NothingFancy.git
